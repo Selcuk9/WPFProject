@@ -1,0 +1,118 @@
+﻿<Window x:Class="BooksForStudents.MainWindow"
+        Icon="Icons/literature_thebook_3708.ico"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:BooksForStudents"
+        mc:Ignorable="d"
+        Title="Books" Height="450" Width="800" MaxWidth="800" MaxHeight="450">
+    <Grid Background="YellowGreen">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="552"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="369"></RowDefinition>
+            <RowDefinition Height="auto" MinHeight="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Name="Image1" Grid.Column="1" Margin="94,51,100,0" Height="308" VerticalAlignment="Top"/>
+        <TextBlock MaxHeight="100" Background="Aqua" Text="Автор: А.С.Пушкин" Grid.Column="1" HorizontalAlignment="Center" FontSize="30" Margin="144,10,149,318" Width="260"/>
+        <Button Name="Button1"
+                ToolTip="I will open"
+                Grid.Column="1" 
+                Grid.Row="1"
+                Click="Button_Click" 
+                Content="Open file"
+                Margin="200,0,205,10" Height="39" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0" Background="#FF1ABFE4" FontSize="22" FontFamily="{DynamicResource {x:Static SystemFonts.MenuFontFamilyKey}}" FontWeight="Bold" />
+        <!--<Image Grid.Column="1" Source="bookMath.jpg" Margin="50" Grid.ColumnSpan="2"/>-->
+        <TabControl Grid.RowSpan="2" Background="Azure">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" >
+                        <Ellipse Width="10" Height="10" Fill="Black" ></Ellipse>
+                        <TextBlock>Math</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <ListBox  x:Name="Books" SelectionChanged="List_SelectionChanged" SelectionMode="Multiple"  Height="68" Margin="5,0,0,0">
+                            <!--SelectionChanged="List_SelectionChanged"-->
+                            <ListBoxItem Height="69" Width="244">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Photo/bookMath.jpg" Width="50"/>
+                                    <TextBlock Width="118" Height="37"><Run Text="Высшая"/><LineBreak/><Run Text="матетматика"/></TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+
+                        <ListBox Margin="5,0,0,0" SelectionChanged="ListBox_SelectionChanged" SelectionMode="Multiple">
+                            <ListBoxItem  Height="71" Width="244">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Photo/BookMath2.jpg" Width="50"/>
+                                    <TextBlock Width="118" Height="37" Text="Ряды матан"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                        
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+            <TabItem Margin="-2,-2,-17,0">
+                <TabItem.Header>
+                    <StackPanel>
+                        <Ellipse Width="10" Height="10" Fill="Black" ></Ellipse>
+                        <TextBlock >Rus</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
+
+
+
+
+
+
+<!--<DockPanel>
+        <TabControl DockPanel.Dock="Top" Height="40" >
+            <TabItem Header="Вкладка 1">
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="170*"></ColumnDefinition>
+                            <ColumnDefinition Width="223*"/>
+                            <ColumnDefinition Width="393*"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Margin="0,0,40,-376"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+  Button Content="Right" DockPanel.Dock="Right" Background="Red" Width="507" Margin="3" />
+    </DockPanel>-->
+
+
+
+
+
+
+
+
+
+
+<!--<Button.Template>
+    <ControlTemplate TargetType="Button">
+        <Grid>
+            <Ellipse Width="auto" Height="auto">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Pdf.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Grid>
+    </ControlTemplate>
+</Button.Template>-->
